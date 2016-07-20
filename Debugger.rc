@@ -1,0 +1,420 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+FRAME_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Debug"
+    BEGIN
+        MENUITEM "&New",                        IDM_NEW
+        MENUITEM "&Open",                       IDM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Debug",                      IDM_DEBUG
+        MENUITEM "Process &Info",               IDM_PROCESS
+        MENUITEM SEPARATOR
+        MENUITEM "Confi&gure",                  IDM_CONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+END
+
+CHILD_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Debug"
+    BEGIN
+        MENUITEM "&Open",                       IDM_OPEN
+        MENUITEM "&Save",                       IDM_SAVE
+        MENUITEM "&Close",                      IDM_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Debug",                      IDM_DEBUG
+        MENUITEM "Process &Info",               IDM_PROCESS
+        MENUITEM SEPARATOR
+        MENUITEM "Confi&gure",                  IDM_CONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    IDM_CASCADE
+        MENUITEM "&Tile",                       IDM_TILE
+        MENUITEM "C&lose All",                  IDM_CLOSEALL
+        MENUITEM "&Arrange",                    IDM_ARRANGE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+CONFIG_DIALOG DIALOG DISCARDABLE  100, 47, 369, 149
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Debug Output Window Configuration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Server",-1,7,5,172,119,WS_GROUP
+    LTEXT           "Server Pipe Name:",-1,15,15,68,8,NOT WS_GROUP
+    EDITTEXT        IDC_SERVERPIPENAME,15,25,156,12
+    CONTROL         "",-1,"Static",SS_ETCHEDHORZ,7,42,172,1
+    LTEXT           "Server TCP/IP Input Port#:",-1,15,49,88,8,NOT WS_GROUP
+    EDITTEXT        IDC_SERVERTCPIPPORT,107,48,64,12,ES_NUMBER
+    LTEXT           "Server UDP Input Port#:",-1,15,65,88,8,NOT WS_GROUP
+    EDITTEXT        IDC_SERVERUDPPORT,107,63,64,12,ES_NUMBER
+    CONTROL         "",-1,"Static",SS_ETCHEDHORZ,7,79,172,1
+    CONTROL         "Always on Top",IDC_ALWAYSONTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,84,68,10
+    CONTROL         "Minimize to Shell Tray",IDC_MINIMIZETOSHELLTRAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,97,88,10
+    CONTROL         "Read-Only Windows",IDC_READONLYWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,109,80,10
+    GROUPBOX        "Client",-1,191,5,172,119,WS_GROUP
+    LTEXT           "Preffered Communication Method:",-1,199,15,112,8,NOT 
+                    WS_GROUP
+    COMBOBOX        IDC_COMMUNICATIONMETHOD,199,25,156,40,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Server Name:",-1,199,42,52,8,NOT WS_GROUP
+    EDITTEXT        IDC_CLIENTSERVERNAME,199,51,156,12
+    LTEXT           "Client Output Port Number:",-1,199,69,88,8,NOT WS_GROUP
+    EDITTEXT        IDC_CLIENTOUTPORT,291,67,64,12,ES_NUMBER
+    LTEXT           "Server Input Port Number:",-1,199,83,88,8,NOT WS_GROUP
+    EDITTEXT        IDC_CLIENTSERVERINPORT,291,81,64,12
+    CONTROL         "",-1,"Static",SS_ETCHEDHORZ,191,98,172,1
+    CONTROL         "Support Pause && Resume",IDC_PAUSERESUME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,199,100,104,10
+    CONTROL         "Auto Insert Line Feed",IDC_AUTOLINEFEED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,199,112,84,10
+    PUSHBUTTON      "Defaults",IDC_DEFAULTS,191,130,50,14,BS_CENTER
+    DEFPUSHBUTTON   "OK",IDOK,252,130,50,14,BS_CENTER
+    PUSHBUTTON      "Cancel",IDCANCEL,313,130,50,14,BS_CENTER
+END
+
+PARAMINPUT_DIALOG DIALOGEX 0, 0, 214, 54
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CAPTION
+EXSTYLE WS_EX_DLGMODALFRAME
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Command Line",-1,2,7,48,10
+    EDITTEXT        IDC_PARAM,51,5,141,14,ES_AUTOHSCROLL
+    LTEXT           "Working Dir:",65534,2,31,48,10
+    EDITTEXT        IDC_WORKDIR,51,28,141,15,ES_AUTOHSCROLL
+END
+
+ENUMDESKTOPWINDOWS_APPLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Applications - WinAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Applications",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_1LISTAPP,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | 
+                    WS_BORDER | WS_TABSTOP,4,13,310,232
+    LTEXT           "&Priority",-1,106,255,24,8,NOT WS_GROUP
+    COMBOBOX        IDC_1COMBOPRIORITY,130,251,36,55,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "&Set",IDC_1BUTSETPRIORITY,167,251,20,14,BS_CENTER
+    PUSHBUTTON      "&Refresh [F5]",IDC_BUTREFRESH,192,251,47,14,BS_CENTER
+    PUSHBUTTON      "End Application",IDC_1BUTTERMINATE,244,251,69,14,
+                    BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PROCESS_TIMES DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Process Times - WinAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Processes",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_10LISTPROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | 
+                    WS_BORDER | WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+END
+
+ALLWINDOWLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Window List - WINAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Windows",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "",IDC_3HWNDTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER,4,13,310,232
+    LTEXT           "&Priority",-1,106,255,24,8,NOT WS_GROUP
+    COMBOBOX        IDC_3COMBOPRIORITY,130,251,36,55,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "&Set",IDC_3BUTSETPRIORITY,167,251,20,14,BS_CENTER
+    PUSHBUTTON      "&Set",IDC_3BUTSETPRIORITY,167,251,20,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,192,251,47,14,BS_CENTER
+    PUSHBUTTON      "Terminate Process",IDC_3BUTTERMINATE,244,251,69,14,
+                    BS_CENTER
+END
+
+THAPI_PROCESSLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Process List - THAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Processes",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_2LISTPROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    LTEXT           "&Priority",-1,106,255,24,8,NOT WS_GROUP
+    COMBOBOX        IDC_2COMBOPRIORITY,130,251,36,55,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "&Set",IDC_2BUTSETPRIORITY,167,251,20,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,192,251,47,14,BS_CENTER
+    PUSHBUTTON      "Terminate Process",IDC_2BUTTERMINATE,244,251,69,14,
+                    BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+THAPI_HEAPLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Heap List - THAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Heaps",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_4LISTHEAPS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,99
+    LTEXT           "&Heap Entry Details of",-1,5,117,71,8,NOT WS_GROUP
+    LTEXT           "",IDC_SELECTEDHEAP,83,117,213,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_4LISTHEAPENTRY,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,4,128,310,120
+    PUSHBUTTON      "&Clear Filter",IDC_BUTCLEARFILTER,4,251,47,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,267,251,47,14,BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+THAPI_MODULELIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Module List - THAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Modules",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_5LISTMODULE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Clear Filter",IDC_BUTCLEARFILTER,4,251,47,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+    LTEXT           "",IDC_MODULESIZE,68,254,92,10,NOT WS_GROUP
+END
+
+THAPI_THREADLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Thread List - THAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Threads",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_6LISTTHREAD,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Clear Filter",IDC_BUTCLEARFILTER,4,251,47,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PSAPI_PROCESSLIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Process List - PSAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Active Processes",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_7LISTPROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    LTEXT           "&Priority",-1,106,255,24,8,NOT WS_GROUP
+    COMBOBOX        IDC_7COMBOPRIORITY,130,251,36,55,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "&Set",IDC_7BUTSETPRIORITY,167,251,20,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,192,251,47,14,BS_CENTER
+    PUSHBUTTON      "Terminate Process",IDC_7BUTTERMINATE,244,251,69,14,
+                    BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PSAPI_MODULELIST DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Module List - PSAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Modules",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_8LISTMODULE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Clear Filter",IDC_BUTCLEARFILTER,4,251,47,14,BS_CENTER
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+    LTEXT           "",IDC_MODULESIZE,68,254,92,10,NOT WS_GROUP
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PSAPI_MEMORYUSAGE DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Memory Usage - PSAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Process",-1,5,3,80,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_9LISTPROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PSAPI_DEVICEDRIVERS DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Device Drivers - PSAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&List of Device Drivers",-1,5,3,100,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_11LISTDRIVERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,13,310,232
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,263,251,50,14,BS_CENTER
+    LTEXT           "",IDC_COUNT,270,3,64,9,NOT WS_GROUP
+END
+
+PSAPI_PERFORMANCEINFO DIALOG DISCARDABLE  0, 0, 320, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Performance Info - PSAPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Page File Information",-1,4,6,71,8,NOT WS_GROUP
+    CONTROL         "ListView1",IDC_12PAGEFILELIST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,4,16,310,48
+    GROUPBOX        "Totals",-1,4,69,152,68,WS_GROUP
+    LTEXT           "Handles",-1,16,82,32,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALHANDLES,79,82,56,10,NOT WS_GROUP
+    LTEXT           "Threads",-1,16,99,32,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALTHREADS,79,99,56,10,NOT WS_GROUP
+    LTEXT           "Processes",-1,16,116,40,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALPROCESSES,79,116,56,10,NOT WS_GROUP
+    GROUPBOX        "Physical Memory ( KB )",-1,164,69,152,68,WS_GROUP
+    LTEXT           "Total",-1,176,82,24,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALPM,244,82,56,10,NOT WS_GROUP
+    LTEXT           "Available",-1,176,99,36,8,NOT WS_GROUP
+    RTEXT           "",IDC_12AVAILABLEPM,244,99,56,10,NOT WS_GROUP
+    LTEXT           "System Cache",-1,176,116,52,8,NOT WS_GROUP
+    RTEXT           "",IDC_12SYSTEMCACHE,244,116,56,10,NOT WS_GROUP
+    GROUPBOX        "Commit Charge ( KB)",-1,4,142,152,68,WS_GROUP
+    LTEXT           "Total",-1,16,155,20,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALCOMMIT,79,155,56,10,NOT WS_GROUP
+    LTEXT           "Limit",-1,16,172,20,8,NOT WS_GROUP
+    RTEXT           "",IDC_12LIMITCOMMIT,79,172,56,10,NOT WS_GROUP
+    LTEXT           "Peak",-1,16,189,20,8,NOT WS_GROUP
+    RTEXT           "",IDC_12PEAKCOMMIT,79,189,56,10,NOT WS_GROUP
+    GROUPBOX        "Kernel Memory ( KB )",-1,164,142,152,68,WS_GROUP
+    LTEXT           "Total",-1,176,155,24,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALKERNEL,244,155,56,10,NOT WS_GROUP
+    LTEXT           "Paged",-1,176,172,28,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALPAGED,244,172,56,10,NOT WS_GROUP
+    LTEXT           "Non-Paged",-1,176,189,40,8,NOT WS_GROUP
+    RTEXT           "",IDC_12TOTALNONPAGED,244,189,56,10,NOT WS_GROUP
+    GROUPBOX        "OS Information",-1,4,213,312,30,WS_GROUP
+    CTEXT           "",IDC_12OSINFO,16,224,288,12,NOT WS_GROUP
+    PUSHBUTTON      "&Refresh",IDC_BUTREFRESH,267,251,47,14,BS_CENTER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDC_WINDOW              ICON    DISCARDABLE     "window.ico"
+IDC_NULLICON            ICON    DISCARDABLE     "nullicon.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "PARAMINPUT_DIALOG", DIALOG
+    BEGIN
+        RIGHTMARGIN, 194
+        BOTTOMMARGIN, 26
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
